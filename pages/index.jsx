@@ -2,8 +2,10 @@ import React, {
   useEffect,
   useState,
 } from "react";
+import Link from "next/link";
 import {Label, TextInput, Button} from "flowbite-react";
-import {BiUserCircle, RiLockPasswordFill} from "react-icons/all";
+import {BiUserCircle} from "react-icons/bi";
+import {RiLockPasswordFill} from "react-icons/ri";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -24,7 +26,7 @@ const Login = () => {
               <Label
                 htmlFor="username"
                 value="Username"
-                class="font-work"
+                class="text-white font-work"
               />
             </div>
             <TextInput
@@ -41,7 +43,7 @@ const Login = () => {
               <Label
                 htmlFor="password1"
                 value="Password"
-                class="font-work"
+                class="text-white font-work"
               />
             </div>
             <TextInput
@@ -53,9 +55,14 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <Button type="submit" color="light">
-            LOG IN
-          </Button>
+          <Link href="/dashboard"
+                className="bg-white text-black rounded-lg flex items-center justify-center font-work py-2">
+            <span>LOG IN</span>
+          </Link>
+          {/*TODO change to Button after adding backend logic*/}
+          {/*<Button type="submit" color="light">*/}
+          {/*  LOG IN*/}
+          {/*</Button>*/}
         </form>
       </div>
     </div>
