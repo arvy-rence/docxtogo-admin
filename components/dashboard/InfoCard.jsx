@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react"
 import {Card} from "flowbite-react"
 
-const InfoCard = ({title, value, icon}) => {
+const InfoCard = ({title, value, icon, color}) => {
   const [date, setDate] = useState(new Date())
 
   useEffect(() => {
@@ -11,7 +11,7 @@ const InfoCard = ({title, value, icon}) => {
   return (
     <Card href="#"
           className="mx-6 my-4 max-w-[15rem] max-h-[15rem] min-w-[15rem] min-h-[15rem] flex flex-col items-center justify-center">
-      <h5 className="text-xl font-bold font-work text-primary dark:text-white flex justify-center items-center">
+      <h5 className={`text-xl font-bold font-work text-${color}-700 flex justify-center items-center`}>
         {icon}
         <span className="pl-4 uppercase tracking-tight">{title}</span>
       </h5>
