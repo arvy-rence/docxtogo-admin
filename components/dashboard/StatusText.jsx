@@ -1,5 +1,5 @@
 import React from "react";
-import {FaFolder, FaFileSignature, FaCheckSquare, FaCalendarDay, FaDatabase} from "react-icons/fa";
+import {FaFolder, FaFileSignature, FaCheckSquare, FaCalendarDay, FaDatabase, FaTimesCircle, FaPrint} from "react-icons/fa";
 
 export const StatusText = ({status}) => {
   return (
@@ -14,8 +14,8 @@ export const StatusText = ({status}) => {
         {status}
       </div>
     ) : (status === "For Release") ? (
-      <div className="text-green-700">
-        <FaCheckSquare className="inline-block mr-2"/>
+      <div className="text-cyan-700">
+        <FaPrint className="inline-block mr-2"/>
         {status}
       </div>
     ) : (status === "To Receive") ? (
@@ -23,8 +23,18 @@ export const StatusText = ({status}) => {
         <FaCalendarDay className="inline-block mr-2"/>
         {status}
       </div>
+    ) : (status === "Claimed") ? (
+      <div className="text-green-700">
+        <FaCheckSquare className="inline-block mr-2"/>
+        {status}
+      </div>
+    ) : (status === "Unclaimed") ? (
+      <div className="text-red-700">
+        <FaTimesCircle className="inline-block mr-2"/>
+        {status}
+      </div>
     ) : (
-      <div className="text-cyan-700">
+      <div className="text-emerald-700">
         <FaDatabase className="inline-block mr-2"/>
         {status}
       </div>
