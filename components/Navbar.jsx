@@ -10,7 +10,7 @@ export const LoggedInNavbar = ({activePage}) => {
     >
       <Navbar.Brand href="/dashboard">
         <span className="text-2xl font-semibold text-white font-work">
-          DocxToGo
+          DocsToGo
         </span>
       </Navbar.Brand>
       <div className="flex md:order-2">
