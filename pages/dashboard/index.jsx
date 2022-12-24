@@ -4,7 +4,7 @@ import React, {
 } from "react";
 import {LoggedInNavbar} from "../../components/Navbar";
 import InfoCard from "../../components/dashboard/InfoCard";
-import {FaFolder, FaFileSignature, FaCheckSquare, FaCalendarDay} from "react-icons/fa";
+import {FaFolder, FaFileSignature, FaCheckSquare, FaCalendarDay, FaPrint} from "react-icons/fa";
 import {Table} from "flowbite-react";
 import {TableRow} from "../../components/dashboard/TableRow";
 
@@ -24,8 +24,8 @@ const Dashboard = (props) => {
                   icon={<FaFileSignature/>}
                   title={"For Signature"}/>
         <InfoCard value={('000' + props.forRelease).slice(-4)}
-                  color="green"
-                  icon={<FaCheckSquare/>}
+                  color="cyan"
+                  icon={<FaPrint/>}
                   title={"For Release"}/>
         <InfoCard value={('000' + props.toReceive).slice(-4)}
                   color="indigo"
@@ -55,7 +55,6 @@ const Dashboard = (props) => {
             <TableRow agentName="John Doe" actionType="Admin Transaction" status="Admin" date="2021-01-01"/>
             <TableRow agentName="John Doe" actionType="Request Transaction Update" status="For Release" date="2021-01-01"/>
             <TableRow agentName="John Doe" actionType="Admin Transaction" status="Admin" date="2021-01-01"/>
-
           </Table.Body>
         </Table>
       </div>
