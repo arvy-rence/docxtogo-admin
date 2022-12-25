@@ -13,7 +13,8 @@ module.exports = {
         work: ["Work Sans", "sans-serif"],
       },
       colors: {
-        primary: "#0f0f93",
+        // primary: "#0f0f93",
+        primary: "#1e3a8a",
       }
     },
   },
