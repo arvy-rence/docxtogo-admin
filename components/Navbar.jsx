@@ -14,10 +14,12 @@ export const LoggedInNavbar = ({activePage}) => {
         </span>
       </Navbar.Brand>
       <div className="flex md:order-2">
-        <Button className="text-white font-work font-bold">
-          <Link href="/">LOG OUT</Link>
-        </Button>
-        <Navbar.Toggle />
+        <Link href="/">
+          <Button className="text-white font-work font-bold">
+            LOG OUT
+          </Button>
+        </Link>
+        <Navbar.Toggle/>
       </div>
       <Navbar.Collapse>
         <Link href="/dashboard"
