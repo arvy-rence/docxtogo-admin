@@ -1,6 +1,6 @@
 import React from "react";
 import {Dropdown, Table} from "flowbite-react";
-import {FaFolder, FaFileSignature, FaCheckSquare, FaCalendarDay} from "react-icons/fa";
+import {FaFolder, FaFileSignature, FaCheckSquare, FaCalendarDay, FaPrint, FaTimesCircle} from "react-icons/fa";
 import {StatusText} from "../dashboard/StatusText";
 
 const RequestTableRow = (
@@ -37,18 +37,24 @@ const RequestTableRow = (
         <StatusText status={data.status}/>
       </Table.Cell>
       <Table.Cell>
-        <Dropdown label={"Status"} disabled={data.status === 'Claimed'}>
+        <Dropdown label={"Status"} disabled={data.status === 'Claimed' || data.status === 'Unclaimed'}>
           <Dropdown.Item icon={FaFolder}>
             On Process
           </Dropdown.Item>
           <Dropdown.Item icon={FaFileSignature}>
             For Signature
           </Dropdown.Item>
-          <Dropdown.Item icon={FaCheckSquare}>
+          <Dropdown.Item icon={FaPrint}>
             For Release
           </Dropdown.Item>
           <Dropdown.Item icon={FaCalendarDay}>
             To Receive
+          </Dropdown.Item>
+          <Dropdown.Item icon={FaCheckSquare}>
+            Claimed
+          </Dropdown.Item>
+          <Dropdown.Item icon={FaTimesCircle}>
+            Unclaimed
           </Dropdown.Item>
         </Dropdown>
       </Table.Cell>
