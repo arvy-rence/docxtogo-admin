@@ -50,11 +50,6 @@ const Dashboard = (props) => {
             <TableRow agentName="John Doe" actionType="Request Transaction Update" status="For Release" date="2021-01-01"/>
             <TableRow agentName="John Doe" actionType="Admin Transaction" status="Admin" date="2021-01-01"/>
             <TableRow agentName="John Doe" actionType="Admin Transaction" status="Admin" date="2021-01-01"/>
-            <TableRow agentName="John Doe" actionType="New Request Transaction" status="On Process" date="2021-01-01"/>
-            <TableRow agentName="John Doe" actionType="Request Transaction Update" status="For Signature" date="2021-01-01"/>
-            <TableRow agentName="John Doe" actionType="Admin Transaction" status="Admin" date="2021-01-01"/>
-            <TableRow agentName="John Doe" actionType="Request Transaction Update" status="For Release" date="2021-01-01"/>
-            <TableRow agentName="John Doe" actionType="Admin Transaction" status="Admin" date="2021-01-01"/>
           </Table.Body>
         </Table>
       </div>
