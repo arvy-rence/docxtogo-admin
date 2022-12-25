@@ -1,6 +1,7 @@
 import React from "react";
 import {Navbar, Button} from "flowbite-react";
 import Link from "next/link";
+import {AvatarModal} from "./navbar/AvatarModal";
 
 export const LoggedInNavbar = ({activePage}) => {
   return (
@@ -13,7 +14,8 @@ export const LoggedInNavbar = ({activePage}) => {
           DocsToGo
         </span>
       </Navbar.Brand>
-      <div className="flex md:order-2">
+      <div className="flex md:order-2 items-center text-white">
+        <AvatarModal/>
         <Link href="/">
           <Button className="text-white font-work font-bold">
             LOG OUT
