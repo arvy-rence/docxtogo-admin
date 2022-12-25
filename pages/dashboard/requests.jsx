@@ -6,8 +6,16 @@ import {LoggedInNavbar} from "../../components/Navbar";
 import {Table} from "flowbite-react";
 import RequestTableRow from "../../components/requests/TableRow";
 
+/**
+ * Page containing all requests that can be managed via the dropdown status. Uses the custom `RequestTableRow`
+ * component to manage the table rows.
+ * @returns {JSX.Element}
+ * @see RequestTableRow
+ * @constructor
+ */
 const Requests = () => {
   const tableHeaders = ["Time Log", "Name", "Section/Strand", "Contact Number", "Document", "Purpose", "Date Requested", "Status", "Action"]
+  // TODO move this to the `getStaticProps` function
   const tableData = [
     {
       "timeLog": "4/4/2022",

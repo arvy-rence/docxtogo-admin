@@ -10,6 +10,7 @@ import {BsGenderMale, BsGenderFemale} from "react-icons/bs";
  * Component to display a modal to create a new student entry in a specific section
  *
  * @comment The input fields of this component is working
+ * @returns {JSX.Element}
  * @param section Used to set the section of the new student to be added
  * @constructor
  */

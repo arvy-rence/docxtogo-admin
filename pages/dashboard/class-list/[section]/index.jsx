@@ -4,6 +4,15 @@ import {ClassTable} from "../../../../components/class-list/ClassTable";
 import {AddStudentModal} from "../../../../components/class-list/AddStudentModal";
 import {Loader} from "../../../../components/Loader";
 
+/**
+ * Dynamic page to render students in a section
+ * @param section Section of the class list to be consumed by AddStudentModal
+ * @param students Array of students in the class to be consumed by `ClassTable`
+ * @see ClassTable
+ * @see AddStudentModal
+ * @returns {JSX.Element}
+ * @constructor
+ */
 export const SectionPage = ({section, students}) => {
   return (
     <>

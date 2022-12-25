@@ -1,6 +1,12 @@
 import React, {useState} from "react";
 import {Button, Table} from "flowbite-react";
 
+/**
+ * Table to display the list of students in a specific section
+ * @param students Array of student objects to be displayed in the table
+ * @returns {JSX.Element}
+ * @constructor
+ */
 export const ClassTable = ({students}) => {
   const tableHeaders = ["#", "LRN", "Name", "Gender", "Track and Strand", "Status", "Action"];
 
@@ -26,13 +32,14 @@ export const ClassTable = ({students}) => {
             }
             <Table.Cell className="text-black">{item.strand}</Table.Cell>
             {
-              (item.status === 'F') ? (
+              (item.status === true) ? (
                 <Table.Cell className="text-green-700">Active</Table.Cell>
               ) : (
                 <Table.Cell className="text-red-700">Inactive</Table.Cell>
               )
             }
             <Table.Cell>
+              {/*TODO Add linking to actual student information (use LRN)*/}
               <Button className="h-[2rem] uppercase font-bold">
                 Edit Student
               </Button>
