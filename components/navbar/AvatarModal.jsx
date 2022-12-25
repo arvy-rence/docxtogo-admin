@@ -36,7 +36,7 @@ export const AvatarModal = () => {
   return (
     <React.Fragment>
       <Toaster/>
-      <FaUserCircle className="mr-8" size={40} onClick={() => setIsOpen(true)}/>
+      <FaUserCircle className="mr-8 cursor-pointer" size={40} onClick={() => setIsOpen(true)}/>
       <Modal
         show={isOpen}
         size="md"
