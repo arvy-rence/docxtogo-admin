@@ -1,8 +1,7 @@
-import React, {useState} from "react";
+import React from "react";
 import {LoggedInNavbar} from "../../../components/Navbar";
 import {ClassTable} from "../../../components/class-list/ClassTable";
 import {AddStudentModal} from "../../../components/class-list/AddStudentModal";
-import {Spinner} from "flowbite-react";
 import {Loader} from "../../../components/Loader";
 
 export const SectionPage = ({section, students}) => {
@@ -44,28 +43,28 @@ export async function getStaticProps({params}) {
     {
       lrn: "136814060704",
       name: "Clarence Rhey Salaveria",
-      gender: true,
+      gender: 'M',
       strand: "STEM",
       status: true,
     },
     {
       lrn: "523625448820",
       name: "Saira Caga",
-      gender: false,
+      gender: 'F',
       strand: "ABM",
       status: true,
     },
     {
       lrn: "963524797632",
       name: "Jon Arvy Enriquez",
-      gender: true,
+      gender: 'M',
       strand: "STEM",
       status: true,
     },
     {
       lrn: "236548953264",
       name: "Marialy Detondoy",
-      gender: false,
+      gender: 'F',
       strand: "HUMSS",
       status: false,
     }
