@@ -55,9 +55,10 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <Link href="/dashboard"
-                className="bg-white text-black rounded-lg flex items-center justify-center font-work py-2">
-            <span>LOG IN</span>
+          <Link href="/dashboard">
+            <Button className="text-white font-work font-bold w-full">
+              LOG IN
+            </Button>
           </Link>
           {/*TODO change to Button after adding backend logic*/}
           {/*<Button type="submit" color="light">*/}
