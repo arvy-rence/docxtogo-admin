@@ -1,8 +1,8 @@
 import React from "react";
-import {LoggedInNavbar} from "../../../components/Navbar";
-import {ClassTable} from "../../../components/class-list/ClassTable";
-import {AddStudentModal} from "../../../components/class-list/AddStudentModal";
-import {Loader} from "../../../components/Loader";
+import {LoggedInNavbar} from "../../../../components/Navbar";
+import {ClassTable} from "../../../../components/class-list/ClassTable";
+import {AddStudentModal} from "../../../../components/class-list/AddStudentModal";
+import {Loader} from "../../../../components/Loader";
 
 export const SectionPage = ({section, students}) => {
   return (
@@ -20,8 +20,8 @@ export const SectionPage = ({section, students}) => {
           </div>
           <div className="mx-[5%] my-[2rem]">
             {(students ?
-              <ClassTable students={students}/> :
-              <h1 className="font-work text-3xl font-bold text-primary">No students in this section</h1>
+                <ClassTable students={students}/> :
+                <h1 className="font-work text-3xl font-bold text-primary">No students in this section</h1>
             )}
           </div>
         </>
