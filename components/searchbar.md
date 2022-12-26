@@ -17,17 +17,15 @@ The Search bar is a component that allows users to search for content in your ap
 3. Add the search bar to the component/page
     ```jsx
     // add the search bar to the page
-    <div className="flex block justify-end">
-      <TextInput
-        id="search"
-        type="text"
-        icon={FaSearch}
-        placeholder="Search for anything"
-        onChange={(e) => setSearch(e.target.value)}
-        required={true}
-        className="font-work w-[20rem] h-[2.5rem] text-sm"
-      />
-    </div>
+     <TextInput
+       id="search"
+       type="text"
+       icon={FaSearch}
+       placeholder="Search for anything"
+       onChange={(e) => setSearch(e.target.value)}
+       required={true}
+       className="font-work w-[20rem] h-[2.5rem] text-sm"
+     />
     ```
    
 4. Add logic and the effect for the search bar
