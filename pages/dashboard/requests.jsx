@@ -132,10 +132,10 @@ const Requests = () => {
             id="search"
             type="text"
             icon={FaSearch}
-            placeholder="Search"
+            placeholder="Search for anything"
             onChange={(e) => setSearch(e.target.value)}
             required={true}
-            className="font-work"
+            className="font-work w-[20rem] h-[2.5rem] text-sm"
           />
         </div>
         <div className="pb-5"></div>
