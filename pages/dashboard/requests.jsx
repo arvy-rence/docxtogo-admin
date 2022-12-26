@@ -3,8 +3,9 @@ import React, {
   useState,
 } from "react";
 import {LoggedInNavbar} from "../../components/Navbar";
-import {Table} from "flowbite-react";
+import {Table, TextInput} from "flowbite-react";
 import RequestTableRow from "../../components/requests/TableRow";
+import {FaSearch} from "react-icons/fa";
 
 /**
  * Page containing all requests that can be managed via the dropdown status. Uses the custom `RequestTableRow`
@@ -109,10 +110,35 @@ const Requests = () => {
       "status": "For Signature"
     }]
 
+  const [search, setSearch] = useState("")
+  const [filteredRequests, setFilteredRequests] = useState(tableData)
+
+  useEffect(() => {
+    const nameMatches = tableData.filter((request) => request.name.toLowerCase().includes(search.toLowerCase()))
+    const sectionMatches = tableData.filter((request) => request.strand.toLowerCase().includes(search.toLowerCase()))
+    const documentMatches = tableData.filter((request) => request.document.toLowerCase().includes(search.toLowerCase()))
+
+    const matches = [...nameMatches, ...sectionMatches, ...documentMatches]
+    const uniqueMatches = [...new Set(matches)]
+    setFilteredRequests(uniqueMatches)
+  }, [search])
+
   return (
     <>
       <LoggedInNavbar activePage="requests"/>
-      <div className="mx-[2%] pt-[2rem] pb-[3rem]">
+      <div className="mx-[2%] pt-5 pb-[3rem]">
+        <div className="flex block justify-end">
+          <TextInput
+            id="search"
+            type="text"
+            icon={FaSearch}
+            placeholder="Search"
+            onChange={(e) => setSearch(e.target.value)}
+            required={true}
+            className="font-work"
+          />
+        </div>
+        <div className="pb-5"></div>
         <Table striped={true}
                className="font-work overflow-y-scroll">
           <Table.Head className="bg-primary text-white">
@@ -121,7 +147,7 @@ const Requests = () => {
             ))}
           </Table.Head>
           <Table.Body className="divide-y">
-            {tableData.map((data, index) => (
+            {filteredRequests.map((data, index) => (
               <RequestTableRow key={index} data={data}/>
             ))}
           </Table.Body>
