@@ -111,9 +111,9 @@ const Logs = () => {
 
   // logic for filtering data
   useEffect(() => {
-    const nameMatches = tableData.filter((log) => log.name.toLowerCase().includes(search.toLowerCase()))
-    const sectionMatches = tableData.filter((log) => log.strand.toLowerCase().includes(search.toLowerCase()))
-    const documentMatches = tableData.filter((log) => log.document.toLowerCase().includes(search.toLowerCase()))
+    const nameMatches = filteredLogs.filter((log) => log.name.toLowerCase().includes(search.toLowerCase()))
+    const sectionMatches = filteredLogs.filter((log) => log.strand.toLowerCase().includes(search.toLowerCase()))
+    const documentMatches = filteredLogs.filter((log) => log.document.toLowerCase().includes(search.toLowerCase()))
 
     const matches = [...nameMatches, ...sectionMatches, ...documentMatches]
     const uniqueMatches = [...new Set(matches)]
