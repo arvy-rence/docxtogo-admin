@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import {LoggedInNavbar} from "../../../../components/Navbar";
 import {ClassTable} from "../../../../components/class-list/ClassTable";
 import {AddStudentModal} from "../../../../components/class-list/AddStudentModal";
 import {Loader} from "../../../../components/Loader";
+import {TextInput} from "flowbite-react";
+import {FaSearch} from "react-icons/fa";
 
 /**
  * Dynamic page to render students in a section
@@ -14,6 +16,9 @@ import {Loader} from "../../../../components/Loader";
  * @constructor
  */
 export const SectionPage = ({section, students}) => {
+  const [search, setSearch] = useState("");
+  const [filteredStudents, setFilteredStudents] = useState(students);
+
   return (
     <>
       <LoggedInNavbar activePage="class-list"/>
@@ -23,13 +28,22 @@ export const SectionPage = ({section, students}) => {
             <h1 className="font-work text-3xl font-bold text-primary">
               Section {section}
             </h1>
-            <div>
+            <div className="flex gap-4">
+              <TextInput
+                id="search"
+                type="text"
+                icon={FaSearch}
+                placeholder="Search for anything"
+                onChange={(e) => setSearch(e.target.value)}
+                required={true}
+                className="font-work w-[20rem] h-[2.5rem] text-sm"
+              />
               <AddStudentModal section={section}/>
             </div>
           </div>
           <div className="mx-[5%] my-[2rem]">
             {(students ?
-                <ClassTable students={students}/> :
+                <ClassTable students={filteredStudents}/> :
                 <h1 className="font-work text-3xl font-bold text-primary">No students in this section</h1>
             )}
           </div>
