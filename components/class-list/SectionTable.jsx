@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {Button, Table, TextInput} from "flowbite-react";
 import {FaSearch} from "react-icons/fa";
+import {IoMdOpen} from "react-icons/io";
 
 export const SectionTable = ({sections}) => {
   const tableHeaders = ["Section", "Adviser", "Strand", "Room Assignment", "Action"];
@@ -46,7 +47,8 @@ export const SectionTable = ({sections}) => {
               <Table.Cell className="text-black">{item.roomAssignment}</Table.Cell>
               <Table.Cell>
                 <Button className="h-[2rem] uppercase font-bold" href={`/dashboard/class-list/${item.section}`}>
-                  Open Record
+                  <IoMdOpen className="mr-2"/>
+                  Open Masterlist
                 </Button>
               </Table.Cell>
             </Table.Row>

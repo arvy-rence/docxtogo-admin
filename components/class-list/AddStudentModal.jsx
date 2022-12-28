@@ -5,6 +5,7 @@ import {Toaster} from "react-hot-toast";
 import {AiOutlineFieldNumber} from "react-icons/ai";
 import {BiBookBookmark, BiRename} from "react-icons/bi";
 import {BsGenderMale, BsGenderFemale} from "react-icons/bs";
+import {AiOutlineUserAdd} from "react-icons/ai";
 
 /**
  * Component to display a modal to create a new student entry in a specific section
@@ -26,6 +27,7 @@ export const AddStudentModal = ({section}) => {
     <React.Fragment>
       <Toaster/>
       <Button onClick={() => setIsOpen(true)} className="font-work uppercase font-bold">
+        <AiOutlineUserAdd className="mr-2"/>
         Add Student
       </Button>
       <Modal

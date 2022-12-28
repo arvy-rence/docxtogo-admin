@@ -2,6 +2,7 @@ import React from "react";
 import {Navbar, Button} from "flowbite-react";
 import Link from "next/link";
 import {AvatarModal} from "./navbar/AvatarModal";
+import {BiLogOut} from "react-icons/bi";
 
 export const LoggedInNavbar = ({activePage}) => {
   return (
@@ -18,6 +19,7 @@ export const LoggedInNavbar = ({activePage}) => {
         <AvatarModal/>
         <Link href="/">
           <Button className="text-white font-work font-bold">
+            <BiLogOut className="mr-2"/>
             LOG OUT
           </Button>
         </Link>
