@@ -1,7 +1,4 @@
-import React, {
-  useEffect,
-  useState,
-} from "react";
+import React from "react";
 import {LoggedInNavbar} from "../../components/Navbar";
 import InfoCard from "../../components/dashboard/InfoCard";
 import {FaFolder, FaFileSignature, FaCalendarDay, FaPrint} from "react-icons/fa";

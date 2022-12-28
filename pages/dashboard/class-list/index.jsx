@@ -13,7 +13,7 @@ const ClassList = ({sectionList}) => {
       <Tabs.Group
         aria-label="Tabs with underline"
         style="pills"
-        className="font-work m-[1rem]"
+        className="font-work m-5"
       >
         <Tabs.Item
           title="Grade 11"
