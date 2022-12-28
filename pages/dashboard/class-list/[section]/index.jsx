@@ -8,7 +8,7 @@ import {FaSearch} from "react-icons/fa";
 
 /**
  * Dynamic page to render students in a section
- * @param section Section of the class list to be consumed by AddStudentModal
+ * @param section Section of the class list to be consumed by `ClassTable`
  * @param students Array of students in the class to be consumed by `ClassTable`
  * @see ClassTable
  * @see AddStudentModal
@@ -16,41 +16,21 @@ import {FaSearch} from "react-icons/fa";
  * @constructor
  */
 export const SectionPage = ({section, students}) => {
-  const [search, setSearch] = useState("");
-  const [filteredStudents, setFilteredStudents] = useState(students);
-
   return (
     <>
       <LoggedInNavbar activePage="class-list"/>
       <Loader data={section} children={
         <>
-          <div className="mx-[5%] my-[2rem] flex justify-between">
-            <h1 className="font-work text-3xl font-bold text-primary">
-              Section {section}
-            </h1>
-            <div className="flex gap-4">
-              <TextInput
-                id="search"
-                type="text"
-                icon={FaSearch}
-                placeholder="Search for anything"
-                onChange={(e) => setSearch(e.target.value)}
-                required={true}
-                className="font-work w-[20rem] h-[2.5rem] text-sm"
-              />
-              <AddStudentModal section={section}/>
-            </div>
-          </div>
           <div className="mx-[5%] my-[2rem]">
             {(students ?
-                <ClassTable students={filteredStudents}/> :
+                <ClassTable students={students} section={section}/> :
                 <h1 className="font-work text-3xl font-bold text-primary">No students in this section</h1>
             )}
           </div>
         </>
       }/>
     </>
-  )
+  );
 }
 
 export async function getStaticPaths() {
