@@ -41,7 +41,7 @@ export const AddStudentModal = ({section}) => {
         <Modal.Body>
           <div className="space-y-4 px-6 pb-4 sm:pb-6 lg:px-8 xl:pb-8">
             <h3 className="text-2xl font-medium text-primary dark:text-white text-center font-bold uppercase">
-              Add New Student
+              Add New Student in {section}
             </h3>
             <div>
               <div className="block">
