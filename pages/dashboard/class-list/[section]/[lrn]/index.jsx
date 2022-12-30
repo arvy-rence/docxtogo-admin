@@ -37,46 +37,47 @@ export const StudentPage = ({lrn, studentInfo, sectionList}) => {
             </h1>
             <div className="flex gap-[10rem] font-work">
               <EditStudentForm studentInformation={studentInfo} sectionList={sectionList}/>
-              <div id="fileUpload" className="w-1/2">
-                <div className="mb-2 block">
-                  <Label
-                    htmlFor="file"
-                    className="font-work text-primary text-xl font-bold"
-                    value="Select files for printing"
-                  />
-                </div>
-                <FileInput
-                  id="file"
-                  multiple={true}
-                  onChange={handleFileSelect}
-                  helperText="Upload related files to print it"
-                />
-                <div className="mt-8">
-                  <h3 className="font-work text-xl font-bold text-primary">
-                    Selected files
-                  </h3>
-                  <ListGroup>
-                    {(uploadedFiles.length > 0) ?
-                      uploadedFiles.map((file, index) => (
-                        <ListGroup.Item key={index} icon={BsFillFileEarmarkTextFill}>
-                          <div className="flex justify-between">
-                            {file.name}{'  '}
-                          </div>
-                        </ListGroup.Item>
-                      )) : (
-                        <ListGroup.Item icon={BsFillFileEarmarkTextFill}>
-                          <div className="flex justify-between">
-                            No files selected
-                          </div>
-                        </ListGroup.Item>
-                      )
-                    }
-                  </ListGroup>
-                  <Button className="mt-4" onClick={handlePrint} disabled={uploadedFiles.length === 0}>
-                    Print selected files
-                  </Button>
-                </div>
-              </div>
+
+              {/*<div id="fileUpload" className="w-1/2">*/}
+              {/*  <div className="mb-2 block">*/}
+              {/*    <Label*/}
+              {/*      htmlFor="file"*/}
+              {/*      className="font-work text-primary text-xl font-bold"*/}
+              {/*      value="Select files for printing"*/}
+              {/*    />*/}
+              {/*  </div>*/}
+              {/*  <FileInput*/}
+              {/*    id="file"*/}
+              {/*    multiple={true}*/}
+              {/*    onChange={handleFileSelect}*/}
+              {/*    helperText="Upload related files to print it"*/}
+              {/*  />*/}
+              {/*  <div className="mt-8">*/}
+              {/*    <h3 className="font-work text-xl font-bold text-primary">*/}
+              {/*      Selected files*/}
+              {/*    </h3>*/}
+              {/*    <ListGroup>*/}
+              {/*      {(uploadedFiles.length > 0) ?*/}
+              {/*        uploadedFiles.map((file, index) => (*/}
+              {/*          <ListGroup.Item key={index} icon={BsFillFileEarmarkTextFill}>*/}
+              {/*            <div className="flex justify-between">*/}
+              {/*              {file.name}{'  '}*/}
+              {/*            </div>*/}
+              {/*          </ListGroup.Item>*/}
+              {/*        )) : (*/}
+              {/*          <ListGroup.Item icon={BsFillFileEarmarkTextFill}>*/}
+              {/*            <div className="flex justify-between">*/}
+              {/*              No files selected*/}
+              {/*            </div>*/}
+              {/*          </ListGroup.Item>*/}
+              {/*        )*/}
+              {/*      }*/}
+              {/*    </ListGroup>*/}
+              {/*    <Button className="mt-4" onClick={handlePrint} disabled={uploadedFiles.length === 0}>*/}
+              {/*      Print selected files*/}
+              {/*    </Button>*/}
+              {/*  </div>*/}
+              {/*</div>*/}
             </div>
           </div>
         </>
@@ -96,7 +97,7 @@ export async function getStaticProps({params}) {
   // TODO get student information via params
 
   const studentInfo = {
-    name: "Glen Robin Enriquez",
+    name: "Glen Robin Alejandrino Enriquez",
     lrn: params.lrn,
     gender: 'M',
     strand: "STEM",
