@@ -46,6 +46,7 @@ const EditStudentForm = ({studentInformation, sectionList}) => {
           type="text"
           defaultValue={studentInformation.name}
           onChange={(e) => setName(e.target.value)}
+          helperText={(<span className="text-xs">Enter the name of the student with the format <code>FN MI LN</code></span>)}
           icon={BiRename}
           required={true}
           shadow={true}
@@ -153,6 +154,7 @@ const EditStudentForm = ({studentInformation, sectionList}) => {
           checked={status}
           label={`Status: ${status ? "Active" : "Inactive"}`}
           onChange={() => setStatus(!status)}
+          className="my-2"
         />
       </div>
       <Button type="submit">
