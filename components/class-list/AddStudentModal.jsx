@@ -89,17 +89,17 @@ export const AddStudentModal = ({section}) => {
                   icon={BiBookBookmark}
                   onChange={(e) => setStrand(e.target.value)}
                 >
-                  <option value="STEM">
+                  <option value="1">
                     STEM
                   </option>
-                  <option value="ABM">
+                  <option value="2">
                     ABM
                   </option>
-                  <option value="HUMSS">
-                    HUMSS
-                  </option>
-                  <option value="GAS">
+                  <option value="3">
                     GAS
+                  </option>
+                  <option value="4">
+                    HUMSS
                   </option>
                 </Select>
               </div>
