@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "../../server/index"
 import {LoggedInNavbar} from "../../components/Navbar";
 import InfoCard from "../../components/dashboard/InfoCard";
 import {FaFolder, FaFileSignature, FaCalendarDay, FaPrint} from "react-icons/fa";
@@ -8,13 +9,14 @@ import {TableRow} from "../../components/dashboard/TableRow";
 /**
  * Dashboard page for the admin/employee of the system
  * @param count Object containing the count of each type of document requests
+ * @param latestUpdate Array of the latest 5 document requests
  * @see InfoCard
  * @see TableRow
  * @returns {JSX.Element}
  * @constructor
  */
-const Dashboard = ({count}) => {
-  const tableHeaders = ["Agent Name", "Transaction Type", "Status", "Date"];
+const Dashboard = ({count, latestUpdate}) => {
+  const tableHeaders = ["Requestor", "Requested Document", "Status", "Date Updated"];
 
   return (
     <>
@@ -45,16 +47,9 @@ const Dashboard = ({count}) => {
             ))}
           </Table.Head>
           <Table.Body className="divide-y">
-            <TableRow agentName="John Doe" actionType="New Request Transaction" status="On Process" date="2021-01-01"/>
-            <TableRow agentName="John Doe" actionType="Request Transaction Update" status="For Signature" date="2021-01-01"/>
-            <TableRow agentName="John Doe" actionType="Request Transaction Update" status="To Receive" date="2021-01-01"/>
-            <TableRow agentName="John Doe" actionType="Request Transaction Update" status="For Release" date="2021-01-01"/>
-            <TableRow agentName="John Doe" actionType="Admin Transaction" status="Admin" date="2021-01-01"/>
-            <TableRow agentName="John Doe" actionType="New Request Transaction" status="On Process" date="2021-01-01"/>
-            <TableRow agentName="John Doe" actionType="Request Transaction Update" status="For Signature" date="2021-01-01"/>
-            <TableRow agentName="John Doe" actionType="Request Transaction Update" status="For Release" date="2021-01-01"/>
-            <TableRow agentName="John Doe" actionType="Admin Transaction" status="Admin" date="2021-01-01"/>
-            <TableRow agentName="John Doe" actionType="Admin Transaction" status="Admin" date="2021-01-01"/>
+            {latestUpdate.map((data, index) => (
+              <TableRow key={index} data={data}/>
+            ))}
           </Table.Body>
         </Table>
       </div>
@@ -63,15 +58,15 @@ const Dashboard = ({count}) => {
 }
 
 export async function getStaticProps() {
-  // TODO replace with API call
+  const countResponse = await axios.get("/request/count")
+  const recentUpdateResponse = await axios.get("/request/dashboard")
+
+  console.log(recentUpdateResponse.data)
+
   return {
     props: {
-      count: {
-        onProcess: 1,
-        forSignature: 2,
-        forRelease: 5,
-        toReceive: 2,
-      }
+      count: countResponse.data.requests,
+      latestUpdate: recentUpdateResponse.data.requests || []
     }
   };
 }
