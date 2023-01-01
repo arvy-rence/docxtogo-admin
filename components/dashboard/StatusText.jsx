@@ -3,40 +3,40 @@ import {FaFolder, FaFileSignature, FaCheckSquare, FaCalendarDay, FaDatabase, FaT
 
 export const StatusText = ({status}) => {
   return (
-    (status === "On Process") ? (
+    (status === 1) ? (
       <div className="text-blue-700">
         <FaFolder className="inline-block mr-2"/>
-        {status}
+        On Process
       </div>
-    ) : (status === "For Signature") ? (
+    ) : (status === 2) ? (
       <div className="text-amber-700">
         <FaFileSignature className="inline-block mr-2"/>
-        {status}
+        For Signature
       </div>
-    ) : (status === "For Release") ? (
+    ) : (status === 3) ? (
       <div className="text-cyan-700">
         <FaPrint className="inline-block mr-2"/>
-        {status}
+        For Release
       </div>
-    ) : (status === "To Receive") ? (
+    ) : (status === 4) ? (
       <div className="text-indigo-700">
         <FaCalendarDay className="inline-block mr-2"/>
-        {status}
+        To Receive
       </div>
-    ) : (status === "Claimed") ? (
+    ) : (status === 5) ? (
       <div className="text-green-700">
         <FaCheckSquare className="inline-block mr-2"/>
-        {status}
+        Claimed
       </div>
-    ) : (status === "Unclaimed") ? (
+    ) : (status === 6) ? (
       <div className="text-red-700">
         <FaTimesCircle className="inline-block mr-2"/>
-        {status}
+        Unclaimed
       </div>
     ) : (
       <div className="text-emerald-700">
         <FaDatabase className="inline-block mr-2"/>
-        {status}
+        Admin
       </div>
     )
   )
