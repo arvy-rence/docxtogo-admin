@@ -4,3 +4,7 @@ import moment from "moment";
 export const adjustDateTime = (date) => {
   return moment(date).subtract(8, "hours").format('MMM Do YYYY, HH:mm');
 }
+
+export const formatDate = (date) => {
+  return moment(date).subtract(8, "hours").format('MMM Do YYYY');
+}
