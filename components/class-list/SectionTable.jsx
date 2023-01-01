@@ -48,7 +48,7 @@ export const SectionTable = ({sections}) => {
               <Table.Cell className="text-black">{item.strand}</Table.Cell>
               <Table.Cell className="text-black">{item.roomAssignment}</Table.Cell>
               <Table.Cell>
-                <Button className="h-[2rem] uppercase font-bold" href={`/dashboard/class-list/${item.section}`}>
+                <Button className="h-[2rem] uppercase font-bold" href={`/dashboard/class-list/${item.id}`}>
                   <IoMdOpen className="mr-2"/>
                   Open Masterlist
                 </Button>
