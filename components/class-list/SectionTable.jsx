@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Button, Table, TextInput} from "flowbite-react";
 import {FaSearch} from "react-icons/fa";
 import {IoMdOpen} from "react-icons/io";
+import AddSectionModal from "./AddSectionModal";
 
 export const SectionTable = ({sections}) => {
   const tableHeaders = ["Section", "Adviser", "Strand", "Room Assignment", "Action"];
@@ -21,7 +22,7 @@ export const SectionTable = ({sections}) => {
 
   return (
     <>
-      <div className="flex justify-end mb-5">
+      <div className="flex justify-end mb-5 gap-4">
         <TextInput
           id="search"
           type="text"
@@ -31,6 +32,7 @@ export const SectionTable = ({sections}) => {
           required={true}
           className="font-work w-[20rem] h-[2.5rem] text-sm"
         />
+        <AddSectionModal/>
       </div>
       <Table striped={true}>
         <Table.Head className="bg-primary text-white">
