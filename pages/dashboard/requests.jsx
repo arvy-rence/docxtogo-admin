@@ -36,7 +36,10 @@ const Requests = ({requests}) => {
       <Toaster/>
       <LoggedInNavbar activePage="requests"/>
       <div className="mx-[2%] pt-5 pb-[3rem]">
-        <div className="flex block justify-end">
+        <div className="flex block justify-between items-center">
+          <h1 className="text-2xl font-work text-primary font-bold">
+            Document Requests
+          </h1>
           <TextInput
             id="search"
             type="text"
