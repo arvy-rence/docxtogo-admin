@@ -1,7 +1,7 @@
 import React from "react";
-import {Dropdown, Table} from "flowbite-react";
-import {FaFolder, FaFileSignature, FaCheckSquare, FaCalendarDay, FaPrint, FaTimesCircle} from "react-icons/fa";
+import {Table} from "flowbite-react";
 import {StatusText} from "../dashboard/StatusText";
+import {adjustDateTime, formatDate} from "../../hooks/adjust-date";
 
 const LogsTableRow = (
   // time log refers to the time the request was last updated
@@ -12,13 +12,10 @@ const LogsTableRow = (
   return (
     <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
       <Table.Cell className="font-medium text-gray-900 dark:text-white">
-        {data.timeLog}
+        {adjustDateTime(data.timeLog)}
       </Table.Cell>
       <Table.Cell className="text-black">
         {data.name}
-      </Table.Cell>
-      <Table.Cell className="text-black">
-        {data.strand}
       </Table.Cell>
       <Table.Cell className="text-black">
         {data.contact}
@@ -30,7 +27,7 @@ const LogsTableRow = (
         {data.purpose}
       </Table.Cell>
       <Table.Cell className="text-black">
-        {data.dateRequested}
+        {formatDate(data.dateRequested)}
       </Table.Cell>
       <Table.Cell className="flex-1">
         <StatusText status={data.status}/>

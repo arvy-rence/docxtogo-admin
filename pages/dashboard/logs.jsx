@@ -10,7 +10,7 @@ import {FaSearch} from "react-icons/fa";
 
 const Logs = () => {
   // noinspection DuplicatedCode
-  const tableHeaders = ["Time Log", "Name", "Section/Strand", "Contact Number", "Document", "Purpose", "Date Requested", "Status"]
+  const tableHeaders = ["Time Log", "Name", "Contact Number", "Document", "Purpose", "Date Requested", "Status"]
   // TODO move this to the `getStaticProps` function
   // noinspection DuplicatedCode
   const tableData = [
