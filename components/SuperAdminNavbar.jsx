@@ -19,7 +19,6 @@ export const LoggedInNavbar = ({activePage}) => {
         </span>
       </Navbar.Brand>
       <div className="flex md:order-2 items-center text-white">
-        <AvatarModal/>
         <Link href="/">
           <Button className="text-white font-work font-bold">
             <BiLogOut className="mr-2"/>

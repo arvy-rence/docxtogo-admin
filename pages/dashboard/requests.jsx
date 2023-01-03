@@ -25,8 +25,9 @@ const Requests = ({requests}) => {
   useEffect(() => {
     const nameMatches = requests.filter((request) => request.name.toLowerCase().includes(search.toLowerCase()))
     const documentMatches = requests.filter((request) => request.document.toLowerCase().includes(search.toLowerCase()))
+    const purposeMatches = requests.filter((request) => request.purpose.toLowerCase().includes(search.toLowerCase()))
 
-    const matches = [...nameMatches, ...documentMatches]
+    const matches = [...nameMatches, ...documentMatches, ...purposeMatches]
     const uniqueMatches = [...new Set(matches)]
     setFilteredRequests(uniqueMatches)
   }, [search])
