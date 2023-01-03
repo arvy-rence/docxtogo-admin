@@ -26,7 +26,7 @@ const Login = () => {
               <Label
                 htmlFor="username"
                 value="Username"
-                class="text-white font-work"
+                className="text-white font-work"
               />
             </div>
             <TextInput
@@ -43,7 +43,7 @@ const Login = () => {
               <Label
                 htmlFor="password1"
                 value="Password"
-                class="text-white font-work"
+                className="text-white font-work"
               />
             </div>
             <TextInput

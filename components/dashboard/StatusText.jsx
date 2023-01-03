@@ -4,37 +4,37 @@ import {FaFolder, FaFileSignature, FaCheckSquare, FaCalendarDay, FaDatabase, FaT
 export const StatusText = ({status}) => {
   return (
     (status === 1) ? (
-      <div className="text-blue-700">
+      <div className="text-blue-700 flex items-center">
         <FaFolder className="inline-block mr-2"/>
         On Process
       </div>
     ) : (status === 2) ? (
-      <div className="text-amber-700">
+      <div className="text-amber-700 flex items-center">
         <FaFileSignature className="inline-block mr-2"/>
         For Signature
       </div>
     ) : (status === 3) ? (
-      <div className="text-cyan-700">
+      <div className="text-cyan-700 flex items-center">
         <FaPrint className="inline-block mr-2"/>
         For Release
       </div>
     ) : (status === 4) ? (
-      <div className="text-indigo-700">
+      <div className="text-indigo-700 flex items-center">
         <FaCalendarDay className="inline-block mr-2"/>
         To Receive
       </div>
     ) : (status === 5) ? (
-      <div className="text-green-700">
+      <div className="text-green-700 flex items-center">
         <FaCheckSquare className="inline-block mr-2"/>
         Claimed
       </div>
     ) : (status === 6) ? (
-      <div className="text-red-700">
+      <div className="text-red-700 flex items-center">
         <FaTimesCircle className="inline-block mr-2"/>
         Unclaimed
       </div>
     ) : (
-      <div className="text-emerald-700">
+      <div className="text-emerald-700 flex items-center">
         <FaDatabase className="inline-block mr-2"/>
         Admin
       </div>
