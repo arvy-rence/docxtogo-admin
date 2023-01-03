@@ -3,8 +3,7 @@ import {LoggedInNavbar} from "../../../../components/Navbar";
 import {ClassTable} from "../../../../components/class-list/ClassTable";
 import {AddStudentModal} from "../../../../components/class-list/AddStudentModal";
 import {Loader} from "../../../../components/Loader";
-import {TextInput} from "flowbite-react";
-import {FaSearch} from "react-icons/fa";
+import axios from "../../../../server/index";
 
 /**
  * Dynamic page to render students in a section
@@ -19,7 +18,7 @@ export const SectionPage = ({section, students}) => {
   return (
     <>
       <LoggedInNavbar activePage="class-list"/>
-      <Loader data={section} children={
+      <Loader data={students} children={
         <>
           <div className="mx-[5%] my-[2rem]">
             {(students ?
@@ -42,40 +41,13 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({params}) {
   // TODO get class information from database (use the params)
-  const students = [
-    {
-      lrn: "136814060704",
-      name: "Clarence Rhey Salaveria",
-      gender: 'M',
-      strand: "STEM",
-      status: true,
-    },
-    {
-      lrn: "523625448820",
-      name: "Saira Caga",
-      gender: 'F',
-      strand: "ABM",
-      status: true,
-    },
-    {
-      lrn: "963524797632",
-      name: "Jon Arvy Enriquez",
-      gender: 'M',
-      strand: "STEM",
-      status: true,
-    },
-    {
-      lrn: "236548953264",
-      name: "Marialy Detondoy",
-      gender: 'F',
-      strand: "HUMSS",
-      status: false,
-    }
-  ]
+  let section = parseInt(params.section);
+  const {data} = await axios.get(`/student/get/${section}`);
+  console.log(data)
   return {
     props: {
-      section: params.section,
-      students: students
+      section: section,
+      students: data || []
     }
   }
 }

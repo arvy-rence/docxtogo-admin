@@ -3,6 +3,8 @@ import {Label, TextInput, Button, Select, ToggleSwitch} from "flowbite-react";
 import {BiBookBookmark, BiRename} from "react-icons/bi";
 import {AiOutlineFieldNumber} from "react-icons/ai";
 import {BsGenderFemale, BsGenderMale} from "react-icons/bs";
+import {toast} from "react-hot-toast";
+import {toastOptions} from "../../styles/modalOptions";
 
 /**
  * Component to display a form to edit a student entry
@@ -46,7 +48,7 @@ const EditStudentForm = ({studentInformation, sectionList}) => {
           type="text"
           defaultValue={studentInformation.name}
           onChange={(e) => setName(e.target.value)}
-          helperText={(<span className="text-xs">Enter the name of the student with the format <code>FN MI LN</code></span>)}
+          helperText={(<span className="text-xs">Enter the name of the student with the format <code>FN MN LN</code></span>)}
           icon={BiRename}
           required={true}
           shadow={true}
@@ -157,7 +159,7 @@ const EditStudentForm = ({studentInformation, sectionList}) => {
           className="my-2"
         />
       </div>
-      <Button type="submit">
+      <Button onClick={() => toast.success("Updated Data", toastOptions)}>
         Save Information
       </Button>
     </form>

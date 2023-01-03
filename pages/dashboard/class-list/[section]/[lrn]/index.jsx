@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
 import {LoggedInNavbar} from "../../../../../components/Navbar";
 import {Loader} from "../../../../../components/Loader";
-import {Label, TextInput, Button, Checkbox, FileInput, ListGroup} from "flowbite-react";
-import {BsFillFileEarmarkTextFill} from "react-icons/bs";
 import EditStudentForm from "../../../../../components/studentPage/EditStudentForm";
+import axios from "../../../../../server/index";
+import {formatDateForBirthday} from "../../../../../hooks/adjust-date";
 
 /**
  * Dynamic page to render a student's information
@@ -81,7 +81,7 @@ export const StudentPage = ({lrn, studentInfo, sectionList}) => {
             </div>
           </div>
         </>
-      } data={lrn}/>
+      } data={studentInfo}/>
     </>
   )
 }
@@ -94,7 +94,19 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({params}) {
-  // TODO get student information via params
+  const lrn = params.lrn
+  const student = await axios.get(`/student/${lrn}`);
+  const studentData = {
+    lrn: student.data.lrn,
+    name: student.data.name,
+    gender: student.data.gender,
+    strand: student.data.strand,
+    status: student.data.status,
+    section: student.data.section,
+    birthday: formatDateForBirthday(student.data.birthday),
+  }
+
+  console.log(student.data)
 
   const studentInfo = {
     name: "Glen Robin Alejandrino Enriquez",
@@ -120,8 +132,8 @@ export async function getStaticProps({params}) {
   try {
     return {
       props: {
-        lrn: params.lrn,
-        studentInfo: studentInfo ? studentInfo : {},
+        lrn: lrn,
+        studentInfo: studentData || {},
         sectionList: sectionList ? sectionList : [],
       }
     }

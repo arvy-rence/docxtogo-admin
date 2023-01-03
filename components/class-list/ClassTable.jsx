@@ -30,7 +30,7 @@ export const ClassTable = ({section, students}) => {
     <>
       <div className="my-[2rem] flex justify-between">
         <h1 className="font-work text-3xl font-bold text-primary">
-          Section {section}
+          Section Data
         </h1>
         <div className="flex gap-4">
           <TextInput
