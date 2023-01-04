@@ -99,7 +99,8 @@ export async function getStaticProps() {
   return {
     props: {
       requests: data.requests || []
-    }
+    },
+    revalidate: 2
   };
 }
 
