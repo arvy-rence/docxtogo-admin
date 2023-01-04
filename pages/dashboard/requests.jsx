@@ -91,7 +91,20 @@ const Requests = ({requests}) => {
   )
 }
 
-export async function getStaticProps() {
+// export async function getStaticProps() {
+//   const {data} = await axios.get("/request")
+//
+//   console.log(data)
+//
+//   return {
+//     props: {
+//       requests: data.requests || []
+//     },
+//     revalidate: 2
+//   };
+// }
+
+export async function getServerSideProps(context) {
   const {data} = await axios.get("/request")
 
   console.log(data)
@@ -100,7 +113,6 @@ export async function getStaticProps() {
     props: {
       requests: data.requests || []
     },
-    revalidate: 2
   };
 }
 
