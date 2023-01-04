@@ -61,7 +61,7 @@ const Logs = ({requests}) => {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps(context) {
   const {data} = await axios.get("/request")
 
   console.log(data)

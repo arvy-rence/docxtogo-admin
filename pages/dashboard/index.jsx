@@ -57,7 +57,7 @@ const Dashboard = ({count, latestUpdate}) => {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps(context) {
   const countResponse = await axios.get("/request/count")
   const recentUpdateResponse = await axios.get("/request/dashboard")
 

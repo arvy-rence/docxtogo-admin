@@ -32,16 +32,27 @@ export const SectionPage = ({section, students}) => {
   );
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: [],
-    fallback: true
-  }
-}
+// export async function getStaticPaths() {
+//   return {
+//     paths: [],
+//     fallback: true
+//   }
+// }
 
-export async function getStaticProps({params}) {
-  // TODO get class information from database (use the params)
-  let section = parseInt(params.section);
+// export async function getStaticProps({params}) {
+//   let section = parseInt(params.section);
+//   const {data} = await axios.get(`/student/get/${section}`);
+//   console.log(data)
+//   return {
+//     props: {
+//       section: section,
+//       students: data || []
+//     }
+//   }
+// }
+
+export async function getServerSideProps(context) {
+  let section = parseInt(context.params.section);
   const {data} = await axios.get(`/student/get/${section}`);
   console.log(data)
   return {

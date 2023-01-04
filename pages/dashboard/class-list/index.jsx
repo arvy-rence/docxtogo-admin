@@ -27,9 +27,17 @@ const ClassList = ({sectionList}) => {
   )
 }
 
-export async function getStaticProps() {
-  // TODO fetch section list make sure to use the structure {grade11: [{...}], grade12: [{...}]}
-
+// export async function getStaticProps() {
+//   const {data} = await axios.get("/section");
+//
+//   console.log(data.sections)
+//   return {
+//     props: {
+//       sectionList: data.sections
+//     },
+//   };
+// }
+export async function getServerSideProps(context) {
   const {data} = await axios.get("/section");
 
   console.log(data.sections)
