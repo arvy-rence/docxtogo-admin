@@ -40,6 +40,9 @@ const Dashboard = ({count, latestUpdate}) => {
                   title={"To Receive"}/>
       </div>
       <div className="mx-[15%] pt-[1rem] pb-[3rem]">
+        <h1 className="font-work text-2xl font-bold text-primary pb-3">
+          Recent Operations
+        </h1>
         <Table className="font-work">
           <Table.Head className="bg-primary text-white">
             {tableHeaders.map((header, index) => (

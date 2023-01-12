@@ -1,5 +1,5 @@
 import React from "react";
-import {Navbar, Button} from "flowbite-react";
+import {Navbar, Button, Tooltip} from "flowbite-react";
 import Link from "next/link";
 import {AvatarModal} from "./navbar/AvatarModal";
 import {BiLogOut} from "react-icons/bi";
@@ -16,7 +16,9 @@ export const LoggedInNavbar = ({activePage}) => {
         </span>
       </Navbar.Brand>
       <div className="flex md:order-2 items-center text-white">
-        <AvatarModal/>
+        <Tooltip content="Update Password" arrow={false} className="font-work">
+          <AvatarModal/>
+        </Tooltip>
         <Link href="/">
           <Button className="text-white font-work font-bold">
             <BiLogOut className="mr-2"/>

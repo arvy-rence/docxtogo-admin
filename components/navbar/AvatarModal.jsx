@@ -5,6 +5,7 @@ import {toast, Toaster} from "react-hot-toast";
 import {toastOptions} from "../../styles/modalOptions.ts";
 import {RiLockPasswordFill} from "react-icons/ri";
 
+
 export const AvatarModal = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [password, setPassword] = useState("");
